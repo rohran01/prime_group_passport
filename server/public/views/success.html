@@ -21,6 +21,17 @@
     <p>Account Balance: {{user.account_balance | currency}}</p>
     <p>Auto Loan Principle Balance: {{user.car_loan | currency}}</p>
     <p>Mortgage Principle Balance: {{user.home_loan | currency}}</p>
+
+    <button ng-click="showForm()">Make a Payment</button>
+    <div class="paymentForm" ng-show="formShowing">
+        <h2>Make a Payment</h2>
+        <form action="/makePayment" method="post">
+            Auto Payment: <input type="number" ng-model="autoPayment" name="autoPayment"/>
+            Home Payment: <input type="number" ng-model="homePayment" name="homePayment"/>
+            <input type="submit" value="Submit Payment">
+            <p>Balance Remaining: {{user.account_balance - autoPayment - homePayment | currency}}</p>
+        </form>
+    </div>
 </body>
 <footer class="footer l-box is-center">
     <p>&copy; Farce Bank and Company</p>

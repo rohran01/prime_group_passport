@@ -6,9 +6,15 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http) {
 }]);
 
 app.controller('successController', ['$scope', '$http', function($scope, $http) {
+    $scope.formShowing = false;
+
     $http.get('/getUser').then(function(response) {
-        $scope.user = response.data
+        $scope.user = response.data;
         console.log(response);
-    })
+    });
+
+    $scope.showForm = function() {
+        $scope.formShowing = true;
+    };
 }]);
 

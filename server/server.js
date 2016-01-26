@@ -40,7 +40,6 @@ passport.deserializeUser(function(id, done) {
 
         query.on('row', function(row) {
             user = row;
-            console.log('Deserialized user:', user);
             done(null, user);
         })
 

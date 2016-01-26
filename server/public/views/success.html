@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="bankApp">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="assets/scripts/client.min.js"></script>
 </head>
-<body>
-    <h1>Yay! You're real!</h1>
+<body ng-controller="successController">
+    <p>Welcome, {{user.first_name}}!</p>
+
+    <h2>Your account details:</h2>
+    <p>Account Balance: {{user.account_balance | currency}}</p>
+    <p>Auto Loan Principle Balance: {{user.car_loan | currency}}</p>
+    <p>Mortgage Principle Balance: {{user.home_loan | currency}}</p>
 </body>
 </html>

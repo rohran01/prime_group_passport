@@ -12,6 +12,10 @@ router.get('/failure', function(request, response) {
     response.sendFile(path.join(__dirname, '../public/views/failure.html'));
 });
 
+router.get('/getUser', function(request, response) {
+    response.send(request.user);
+});
+
 router.get('/', function(request, response) {
     response.sendFile(path.join(__dirname, '../public/views/index.html'));
 });

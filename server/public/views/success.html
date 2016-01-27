@@ -2,7 +2,7 @@
 <html lang="en" ng-app="bankApp">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Your account information</title>
     <link rel="stylesheet" href="views/styles/normalize.css">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="views/styles/custom.css">
@@ -14,27 +14,33 @@
     <h2>Welcome to Farce Bank and Company!</h2>
 </div>
 <div class="clearfix"></div>
-<body class="container" ng-controller="successController">
-    <p>Welcome, {{user.first_name}}!</p>
+<body ng-controller="successController">
+    <div class="splash-container">
+        <h1>Farce Bank and Company</h1>
+    </div>
+    <div class="content">
+        <p><i>Welcome, {{user.first_name}}!</i></p>
+        <h3>Your account details:</h3>
+        <p>Account Balance: {{user.account_balance | currency}}</p>
+        <p>Auto Loan Principle Balance: {{user.car_loan | currency}}</p>
+        <p>Mortgage Principle Balance: {{user.home_loan | currency}}</p>
 
-    <h2>Your account details:</h2>
-    <p>Account Balance: {{user.account_balance | currency}}</p>
-    <p>Auto Loan Principle Balance: {{user.car_loan | currency}}</p>
-    <p>Mortgage Principle Balance: {{user.home_loan | currency}}</p>
+        <button ng-click="showForm()">Make a Payment</button>
+        <div class="paymentForm" ng-show="formShowing">
+            <h3>Make a Payment</h3>
+            <form class="pure-form pure-form-stacked" action="/makePayment" method="post">
+                Auto Payment: <input type="number" ng-model="autoPayment" name="autoPayment"/>
+                Home Payment: <input type="number" ng-model="homePayment" name="homePayment"/>
+                <input class="submit" type="submit" value="Submit Payment">
+                <p>Balance Remaining: {{user.account_balance - autoPayment - homePayment | currency}}</p>
+            </form>
 
-    <button ng-click="showForm()">Make a Payment</button>
-    <div class="paymentForm" ng-show="formShowing">
-        <h2>Make a Payment</h2>
-        <form action="/makePayment" method="post">
-            Auto Payment: <input type="number" ng-model="autoPayment" name="autoPayment"/>
-            Home Payment: <input type="number" ng-model="homePayment" name="homePayment"/>
-            <input type="submit" value="Submit Payment">
-            <p>Balance Remaining: {{user.account_balance - autoPayment - homePayment | currency}}</p>
-        </form>
+        </div>
     </div>
 </body>
+<br>
 <footer class="footer l-box is-center">
-    <p>&copy; Farce Bank and Company</p>
-    <p class="italicize">Make it a "Farcey" day!</p>
+    <p><b>&copy; Farce Bank and Company</b></p>
+    <p class="italicize">Make it a "Farciful" day!</p>
 </footer>
 </html>

@@ -7,35 +7,29 @@
     height: 0;
 }
 
-* {
-    margin: 0;
-}
-html, body {
-    height: 100%;
-}
-.page-wrap {
+html {
+    position: relative;
     min-height: 100%;
-    /* equal to footer height */
-    margin-bottom: -142px;
 }
-.page-wrap:after {
-    content: "";
+body {
     display: block;
+    margin: 0 0 100px;
+    background-color: black;
+    color: #F9B800;
+    overflow-y: scroll;
 }
-.site-footer, .page-wrap:after {
-    height: 142px;
-}
-.site-footer {
-    background: orange;
-}
-
-
-
-.header {
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
     background-color: #08649F;
-    color: white;
-    height: 120px;
+    color: #F9B800;
+    padding: 0 0 40px 20px;
+
 }
+
 
 img {
     display: inline-block;
@@ -49,29 +43,31 @@ h2 {
     margin-top: 30px;
     font-size: 48px;
 }
-body {
-    background-color: black;
-    color: #F9B800;
+h3 {
+    border-bottom: 2px solid white;
+    padding-bottom: 4px;
 }
-input {
+body {
+
+}
+input, button {
     margin: 4px;
     font-size: 16px;
-}
-footer {
-    background-color: #08649F;
-    color: #F9B800;
+    color: black;
 }
 
+.header {
+    background-color: #08649F;
+    color: white;
+    height: 120px;
+}
 .splash-container, .content {
     border: 2px solid white;
     border-radius: 4px;
     margin: 20px 30px;
     padding: 10px;
 }
-.submit {
-    color: black;
-}
-.submit:hover {
+.submit:hover, button:hover {
     font-style: italic;
 }
 .italicize {

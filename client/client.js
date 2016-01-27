@@ -5,7 +5,7 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http) {
 
 }]);
 
-app.controller('successController', ['$scope', '$http', '$location', function($scope, $http, $location) {
+app.controller('successController', ['$scope', '$http', function($scope, $http) {
     $scope.formShowing = false;
 
     $http.get('/getUser').then(function(response) {
@@ -16,5 +16,12 @@ app.controller('successController', ['$scope', '$http', '$location', function($s
     $scope.showForm = function() {
         $scope.formShowing = true;
     };
+
+    $scope.logOut = function() {
+        $http.get('/logOut', function(response) {
+        });
+    }
 }]);
+
+
 

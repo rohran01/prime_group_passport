@@ -25,7 +25,7 @@ router.get('/getUser', function(request, response) {
 router.get('/logOut', function(request, response) {
     console.log('logged out user', request.user);
     request.logout();
-    response.redirect('/');
+    response.sendStatus(200);
 });
 
 router.post('/makePayment', function(request, response) {

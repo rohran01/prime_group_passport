@@ -40,6 +40,10 @@ passport.deserializeUser(function(id, done) {
 
         query.on('row', function(row) {
             user = row;
+        });
+
+        query.on('end', function() {
+            client.end();
             done(null, user);
         })
 
@@ -70,6 +74,7 @@ passport.use('local', new localStrategy({
             } else {
                 done(null, false, {message: 'WRONG!'});
             }
+            client.end();
         });
     });
 }));

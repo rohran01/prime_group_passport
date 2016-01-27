@@ -24,7 +24,8 @@ router.get('/getUser', function(request, response) {
 
 router.get('/logOut', function(request, response) {
     console.log('logged out user', request.user);
-    request.logout();
+    request.logOut();
+    request.session = null;
     response.sendStatus(200);
 });
 

@@ -52,11 +52,7 @@ router.post('/makePayment', function(request, response) {
 });
 
 router.get('/', function(request, response) {
-    if(request.isAuthenticated()) {
-        response.redirect('/success');
-    } else {
-        response.sendFile(path.join(__dirname, '../public/views/index.html'));
-    }
+    response.sendFile(path.join(__dirname, '../public/views/index.html'));
 });
 
 router.get('/*', function(request, response){

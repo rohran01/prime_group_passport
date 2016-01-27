@@ -20,7 +20,7 @@
         <h1>Farce Bank and Company</h1>
     </div>
     <div class="content">
-        <p><i>Welcome, {{user.first_name}}!</i></p>
+        <p><i>Welcome, {{user.first_name}}!</i></p>    <form action="/logOut" method="get"><input class="submit" type="submit" value="Log Out"></form>
         <h3>Your account details:</h3>
         <p>Account Balance: {{user.account_balance | currency}}</p>
         <p>Auto Loan Principle Balance: {{user.car_loan | currency}}</p>

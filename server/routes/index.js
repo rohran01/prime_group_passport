@@ -22,6 +22,12 @@ router.get('/getUser', function(request, response) {
     response.send(request.user);
 });
 
+router.get('/logOut', function(request, response) {
+    console.log('logged out user', request.user);
+    request.logout();
+    response.redirect('/');
+});
+
 router.post('/makePayment', function(request, response) {
     console.log(request.body);
     console.log(request.user);

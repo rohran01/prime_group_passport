@@ -5,7 +5,7 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http) {
 
 }]);
 
-app.controller('successController', ['$scope', '$http', function($scope, $http) {
+app.controller('successController', ['$scope', '$http', '$location', function($scope, $http, $location) {
     $scope.formShowing = false;
 
     $http.get('/getUser').then(function(response) {

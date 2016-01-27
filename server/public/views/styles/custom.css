@@ -12,9 +12,10 @@ html {
     min-height: 100%;
 }
 body {
+    font-family: 'Open Sans', sans-serif;
     display: block;
     margin: 0 0 100px;
-    background-color: black;
+    background-color: #292929;
     color: #F9B800;
     overflow-y: scroll;
 }
@@ -25,9 +26,9 @@ footer {
     height: 50px;
     width: 100%;
     background-color: #08649F;
-    color: #F9B800;
+    color: #DCDCDC;
     padding: 0 0 40px 20px;
-
+    border-top: 2px solid #F9B800;
 }
 
 
@@ -44,31 +45,47 @@ h2 {
     font-size: 48px;
 }
 h3 {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #DCDCDC;
     padding-bottom: 4px;
 }
-body {
-
+input, input:active, input:focus, input:enabled, input:visited, input:target {
+    background-color: transparent;
+    border: 2px solid #F9B800;
+    outline: none;
+    color: #F9B800
 }
+
 input, button {
     margin: 4px;
     font-size: 16px;
-    color: black;
 }
 
 .header {
     background-color: #08649F;
-    color: white;
+    color: #DCDCDC;
     height: 120px;
+    border-bottom: 2px solid #F9B800;
 }
 .splash-container, .content {
-    border: 2px solid white;
-    border-radius: 4px;
+    border: 2px solid #DCDCDC;
+    border-radius: 5px;
     margin: 20px 30px;
     padding: 10px;
 }
+.submit, button {
+    background-color: transparent;
+    color: #F9B800;
+    font-size: 16px;
+    border: 2px solid #F9B800;
+    border-radius: 5px;
+}
+
 .submit:hover, button:hover {
-    font-style: italic;
+    color: #DCDCDC;
+    border-color: #DCDCDC;
+}
+input:focus {
+    border: 1px solid #F9B800;
 }
 .italicize {
     font-style: italic;

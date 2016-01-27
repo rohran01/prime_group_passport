@@ -48,7 +48,7 @@ h3 {
     border-bottom: 2px solid #DCDCDC;
     padding-bottom: 4px;
 }
-input, input:active, input:focus, input:enabled, input:visited, input:target {
+input {
     background-color: transparent;
     border: 2px solid #F9B800;
     outline: none;
@@ -81,8 +81,8 @@ input, button {
 }
 
 .submit:hover, button:hover {
-    color: #DCDCDC;
-    border-color: #DCDCDC;
+    color: #08649F;
+    border-color: #08649F;
 }
 input:focus {
     border: 1px solid #F9B800;
